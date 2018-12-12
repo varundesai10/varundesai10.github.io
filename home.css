@@ -167,7 +167,7 @@ ul.navbar {
   margin = 5px 5px;
   height: 100px;
   width: 100px;
-  transition: transform 1s;
+  transition: transform 0.5, 
 }
 
 .final-images img:hover{
