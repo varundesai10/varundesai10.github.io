@@ -55,17 +55,18 @@ p.first-text{
 .last-part img{
     z-index: -1;
     display: block;
-    position: relative;
+    position: absolute;
     margin: 10px 10px 10px 40px;
     width: 25%;
-    height: 80%;
+    height: 60%;
     box-shadow: 5px 5px 2px 1px;
     left: 35%;
-    top: 10%;
+    top: 255%;
 }
 
 .last-part{
   height: 70%;
+  margin-top: 20px;
   z-index: -2;
 }
 
@@ -87,9 +88,9 @@ p.first-text{
   font-family:Georgia;
   color: rgb (10,10,10);
   font-size: 25px;
-  position: relative;
+  position: absolute;
   left: 65%;
-  top: -80%;
+  top: 250%;
   width: 30%;
   font-weight: medium;
   font-style: italic;
@@ -166,7 +167,7 @@ ul.navbar {
   margin = 5px 5px;
   height: 100px;
   width: 100px;
-  transition: transform 2s;
+  transition: transform 1s;
 }
 
 .final-images img:hover{
