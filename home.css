@@ -73,7 +73,7 @@ p.first-text{
 .last-part p.first{
   margin: 20px 40px 20px 20px;
   font-family:Georgia;
-  color: rgb (10,10,10);
+  color: white;
   font-size: 25px;
   position: absolute;
   left: 2%;
@@ -86,7 +86,7 @@ p.first-text{
 .last-part p.second{
   margin: 20px;
   font-family:Georgia;
-  color: rgb (10,10,10);
+  color: white;
   font-size: 25px;
   position: absolute;
   left: 65%;
