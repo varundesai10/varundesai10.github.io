@@ -21,7 +21,7 @@
   width: 100%;
   align-self: center;
   background-attachment: scroll;
-  background-size: cover;
+  background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -30,6 +30,7 @@
 
   .parallaxmine {
     background-attachment: fixed; /* fixed for larger screens */
+    background-size: cover;
   }
 
   .titletext::before {
