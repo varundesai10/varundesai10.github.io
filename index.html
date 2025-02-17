@@ -8,15 +8,32 @@
       	<link rel="stylesheet" href="css/style1.css">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <script src="https://kit.fontawesome.com/ae4028ac3d.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.fade-in-section');
+            
+            const fadeInOnScroll = function() {
+              sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (sectionTop < windowHeight * 0.85) {
+                  section.classList.add('is-visible');
+                }
+              });
+            };
+            
+            window.addEventListener('scroll', fadeInOnScroll);
+            fadeInOnScroll(); // Initial check
+          });
+        </script>
     </head>
 
     <body>
       <div class='parallaxmine'></div>
         <div class="centermine">
           <div class = "introtext titletext"></div>
-        <a href="#design">
-         <!-- <img src = "images/varun.jpeg" alt="dp" id="punk"></a><br> -->
-    
         </div>
     <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">Varun Desai</a>
@@ -54,106 +71,48 @@
     </div>
   </div>
 </nav>
-<h1><br></h1>
- <div class="container">
-  <div class="row">
-    <div class="col-md-2">
-    </div>
+
+<main class="container py-5">
+  <div class="row justify-content-center">
     <div class="col-md-8">
-      <h1> Hey. </h1>
-    </div>
-    <div class="col-md-2">
-    </div>
-  </div>
-</div>
-
-  <div class="container">
-    <div class="row">
-      <div class="col-md-2">
-      </div>
-    <div class="col-md-8">
-      <blockquote class='blockquote text-left'>
-        <p class='introduction'>My name is <mark>Varun Desai</mark>. 
-      </blockquote>
-    </div>
-    <div class="col-md-2">
-    </div>
-  </div>
-  <div class = 'row'>
-    <div class='col-md-2'>
-      <blockquote class='blockquote'>
-      <h1 class='display-5'></h1>
-      </blockquote>
-    </div>
-    <div class='col-md-8'>
-      <p class='introduction'>
-
-      I am very passionate about computers and enjoy a lot working with low level systems. I could bore you more 
-      with details about my professional experience, but for that you can just have a look at my resume (must
-    be linked somewhere on this website). This website is largely unmaintained, if you're actually reading this 
-    I'm surprised. <br> <br>
-
-      I am perpetually confused about what I should do with my life, some sort of an exitential crisis. I like to read 
-      a lot, particularly non fiction: philosophy and psychology. I think that I like to write, but have never commited 
-      to maintaining a blog documenting my thoughts and experiences, even though I have wanted to for some time. I like 
-      to think of myself as a curious person. <br> <br>
-
-      The image above is AI generated. It represents two famous monuments that I fell in love with. In the backdrop is 
-      Humayun's Tomb, a beautiful piece of architecture in Delhi that I have visited multiple times. In the foreground 
-      is the Golden Gate bridge, in San Francisco. I also love sunsets. <br><br>
-
-      Here is comic strip that has been on this website for a while now. I saw it once and though it conveyed a nice 
-      message people need to understand. Life goes on quite fast. If you don't stop and look around once in a while, 
-      you could miss it. <br>
-      </p>
-    </div>
-    <div class='col-md-2'>
-    </div>
-  </div>
-    <div class = 'row'>
-      <div class='col-md-2'>
-        <blockquote class='blockquote'>
-          <h1 class='display-5'></h1>
-        </blockquote>
-      </div>
-      <div class='col-md-8'>
-        
-      </div>
-      <div class='col-md-2'>
-      </div>
-    </div>
-    <div class = 'row'>
-      <div class='col-md-2'>
-        <blockquote class='blockquote'>
-        <h1 class='display-5'></h1>
-        </blockquote>
-      </div>
-      <div class='col-md-8'>
-        <p class='introduction'>
-          You can find my CV <a href="./cv.pdf">here</a>.  
-        </p>
-      </div>
-      <div class='col-md-2'>
-      </div>
-    </div>
-    <div class = 'row'>
-      <div class='col-md-2'>
-        <blockquote class='blockquote'>
-        <h1 class='display-5'></h1>
-        </blockquote>
-      </div>
-      <div class='col-md-8'>
-        <p>
-          <img class='comic' src="./images/comic.jpeg", alt="Calvin and Hobbes Comic" style="width:100%">
-        </p>
+      <h1 class="display-4 mb-4">Hey.</h1>
       
+      <div class="card border-0 bg-transparent fade-in-section">
+        <div class="card-body px-0">
+          <p class="introduction">
+            My name is <mark>Varun Desai</mark>.
+          </p>
+          <p class='introduction'>
+            I am very passionate about computers and enjoy a lot working with low level systems. I could bore you more 
+            with details about my professional experience, but for that you can just have a look at my resume (must
+            be linked somewhere on this website). This website is largely unmaintained, if you're actually reading this 
+            I'm surprised. <br> <br>
+            <!-- I am perpetually confused about what I should do with my life, some sort of an exitential crisis. I like to read 
+            a lot, particularly non fiction: philosophy and psychology. I think that I like to write, but have never commited 
+            to maintaining a blog documenting my thoughts and experiences, even though I have wanted to for some time. I like 
+            to think of myself as a curious person. <br> <br> -->
+
+            The image above is AI generated. In the foreground is the Golden Gate bridge, in San Francisco. I like sunsets. <br><br>
+
+            Here is comic strip that has been on this website for a while now. Life goes on quite fast. <br>
+          </p>
+        </div>
       </div>
-      <div class='col-md-2'>
+
+      <div class="my-4 fade-in-section">
+        <p class="introduction">
+          You can find my CV <a href="./cv.pdf" class="btn btn-outline-primary btn-sm">here</a>.
+        </p>
+      </div>
+
+      <div class="card border-0 shadow-sm fade-in-section">
+        <div class="card-body p-0">
+          <img class='comic img-fluid' src="./images/comic.jpeg" alt="Calvin and Hobbes Comic">
+        </div>
       </div>
     </div>
-
-</div>
-
+  </div>
+</main>
 
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

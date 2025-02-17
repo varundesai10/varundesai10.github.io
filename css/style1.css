@@ -1,3 +1,58 @@
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #e74c3c;
+  --bg-color: #f8f9fa;
+  --text-color: #2c3e50;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
 @media(min-width:800px){
 #punk:hover, #punk {
   height: 40%;
@@ -15,15 +70,56 @@
 }
 }
 
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.navbar {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.navbar-brand {
+  font-weight: 600;
+  color: var(--primary-color) !important;
+}
+
+.nav-link {
+  color: var(--primary-color) !important;
+  transition: color 0.3s ease;
+  animation: slideInFromLeft 0.5s ease-out forwards;
+}
+
+.nav-link:hover {
+  color: var(--secondary-color) !important;
+}
+
 .parallaxmine {
   background-image: url("../images/humayun_goldengate.jpeg");
-  height: 100%;
+  height: 100vh;
   width: 100%;
   align-self: center;
   background-attachment: scroll;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  position: relative;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.parallaxmine::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
 }
 
 @media (min-width: 800px) {
@@ -35,14 +131,11 @@
 
   .titletext::before {
     content: "Hi.";
-    background-color: rgba(255, 255, 255, 0.5);
-    
-    /* make only the background at 50% opacity */
-
-    /* make the text at 100% opacity */
-    color: rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 0.2em 0.4em;
+    border-radius: 8px;
     font-size: 50%;
-    
+    color: var(--primary-color);
   }
 }
 @media (max-width: 799px) {
@@ -50,6 +143,7 @@
     content: "";
   }
 }
+
 body {
   background-color: rgba(255, 242, 239, 0.8);
   height: 100%;
@@ -63,13 +157,16 @@ html {
 
 .centermine {
   position: absolute;
-  font-size: 1000%;
+  font-size: clamp(3rem, 10vw, 8rem);
+  font-weight: 700;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -53%);
   color: white;
   font-family: "Ubuntu", sans-serif;
   align-content: center;
+  z-index: 1;
+  /* animation: fadeInUp 1.2s ease-out; */
 }
 
 #punk {
@@ -85,6 +182,7 @@ html {
   align-self: center;
   left: 2%;
   color: white;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .introtext:hover {
@@ -119,5 +217,41 @@ a p {
   margin: 20px;
   width: 100%;
   height: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  animation: float 6s ease-in-out infinite;
 }
+
+.comic:hover {
+  transform: translateY(-5px);
+}
+
+.fab {
+  transition: transform 0.3s ease;
+}
+
+.fab:hover {
+  transform: scale(1.2);
+}
+
+mark {
+  transition: background-color 0.3s ease;
+}
+
+mark:hover {
+  background-color: var(--primary-color);
+}
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /*# sourceMappingURL=style1.css.map */
